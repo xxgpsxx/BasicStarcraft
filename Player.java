@@ -13,8 +13,11 @@ public class Player
 	private Map map;
 	public Player(int number, Map map)
 	{
-		this.number = number;
 		this.map = map;
+		for(int i = 0; i < map.getPlayers().size(); i++)
+			if(map.getPlayers().get(i).getNumber() == number)
+				throw new IllegalArgumentException("Another player already exists with same number");
+		this.number = number;
 	}
 	public Map getMap() { return map; }
 	public int getNumber() { return number; }
@@ -25,4 +28,6 @@ public class Player
 	public int getAvailableSupply() { return supply[1]; }
 	public int getUsedSupply() { return supply[0]; }
 	public ArrayList <Thing> getSelection() { return selection; }
+	public Building add(Building building) { buildings.add(building); return building; }
+	public Unit add(Unit unit) { armyUnits.add(unit); return unit; }
 }
