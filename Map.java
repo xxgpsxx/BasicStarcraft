@@ -17,6 +17,7 @@ public class Map
 	public Player add(Player player) { players.add(player); return player; }
 	public int getX() { return x; }
 	public int getY() { return y; }
+	public int numPlayers() { return players.size(); }
 	public ArrayList <Unit> getUnits() { return units; }
 	public ArrayList <Player> getPlayers() { return players; }
 	public ArrayList <Building> getBuildings() { return buildings; }
@@ -27,5 +28,9 @@ public class Map
 				return player;
 		return null;
 	}
-	public Building add(Building building) { buildings.add(building); return building; }
+	public Building add(Building building)
+	{
+		getPlayerByNumber(building.getOwner()).add(building);
+		return building;
+	}
 }
