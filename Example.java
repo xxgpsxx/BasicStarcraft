@@ -69,7 +69,7 @@ public class Example extends Application implements EventHandler<InputEvent>
 	}
 	public void handle(final InputEvent event)
 	{
-		if(x>-50)
+		if(true)
 		{
 			if(event instanceof KeyEvent)
 			{
