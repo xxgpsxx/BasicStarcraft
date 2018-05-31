@@ -21,6 +21,7 @@ public class Thing
 		this.armor = armor;
 		this.location = location;
 	}
+	public Location teleportTo(Location location) { this.location = location; return location; }
 	public Map getMap() { return map; }
 	public int getOwner() { return owner; }
 	public Location getLocation() { return location; }
